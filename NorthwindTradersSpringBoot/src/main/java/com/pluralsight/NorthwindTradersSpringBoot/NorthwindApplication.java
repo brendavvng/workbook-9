@@ -46,7 +46,12 @@ public class NorthwindApplication implements CommandLineRunner {
                     List<Product> products = productDao.getAll();
 
                     // Print the products to the screen.
-                    System.out.println("\nProducts: ");
+                    System.out.println("\n");
+                    System.out.println("♡ ∩_∩ \n" +
+                            "(„•֊•„)♡\n" +
+                            "|￣UU￣￣￣￣￣￣￣￣￣|");
+                    System.out.println("      Products: ");
+                    System.out.println(" ﹉﹉﹉﹉﹉୨♡୧﹉﹉﹉﹉﹉");
                     for (Product product : products) {
                         System.out.println(product);
                     }

@@ -52,4 +52,17 @@ public class Product {
         this.price = price;
     }
 
+    // This is a special method called toString().
+    // It tells Java what to print when we print a Film object.
+    // This is very helpful for debugging or showing the film in the console.
+    @Override
+    public String toString() {
+        return "Product ˗ ꒰" +
+                "ProductID = " + productId +
+                ", ProductName = '" + name + '\'' +
+                ", CategoryID = " + category + '\'' +
+                ", UnitPrice = $" + String.format("%.2f", price) +
+                "꒱";
+    }
+
 }
