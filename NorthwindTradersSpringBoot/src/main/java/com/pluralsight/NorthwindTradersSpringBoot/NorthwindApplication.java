@@ -64,8 +64,9 @@ public class NorthwindApplication implements CommandLineRunner {
                     System.out.print("Enter product name: ");
                     String name = scanner.nextLine();
 
-                    System.out.print("Enter product category: ");
+                    System.out.print("Enter product category ID: ");
                     int productCategory = scanner.nextInt();
+                    scanner.nextLine();
 
                     System.out.print("Enter the product price: ");
                     double productPrice = Double.parseDouble(scanner.nextLine());
@@ -90,7 +91,7 @@ public class NorthwindApplication implements CommandLineRunner {
                     // The user chose option 3 → Exit the program.
 
                     // Print a goodbye message.
-                    System.out.println("Goodbye!");
+                    System.out.println("\nNow exiting the system. Goodbye ──★ ˙\uD83C\uDF53 ̟ !\n");
 
                     // End the program with a success status (0).
                     System.exit(0);
