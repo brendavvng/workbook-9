@@ -18,4 +18,10 @@ public class HomeController {
     public String home(@RequestParam(defaultValue="World") String country) {
         return "Hello " + country;
     }
+
+    // testing /brenda 
+    @GetMapping("/brenda")
+    public String brendasPage() {
+        return "Hello Brenda!";
+    }
 }
