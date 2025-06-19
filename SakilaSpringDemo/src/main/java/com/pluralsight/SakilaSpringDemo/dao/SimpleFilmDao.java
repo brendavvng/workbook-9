@@ -32,15 +32,9 @@ public class SimpleFilmDao implements FilmDao {
         films.add(new Film(nextId++, "Titanic", "Drama", 3.99));
     }
 
-    // This method is required because we are implementing the FilmDao interface.
-    // It allows us to add a new Film to the list.
     @Override
-    public void add(Film film) {
-        // We assign the next unique ID to the film.
-        film.setFilmId(nextId++);
-
-        // We add the film to the list.
-        films.add(film);
+    public Film add(Film film) {
+        return null;
     }
 
     // This method is required because we are implementing the FilmDao interface.
@@ -49,6 +43,11 @@ public class SimpleFilmDao implements FilmDao {
     public List<Film> getAll() {
         // Return the list of films.
         return films;
+    }
+
+    @Override
+    public Film findById(int id) {
+        return null;
     }
 
 }
