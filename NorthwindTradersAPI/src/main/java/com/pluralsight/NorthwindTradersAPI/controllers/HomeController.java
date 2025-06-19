@@ -19,7 +19,7 @@ public class HomeController {
         return "Hello " + country;
     }
 
-    // testing /brenda 
+    // testing /brenda
     @GetMapping("/brenda")
     public String brendasPage() {
         return "Hello Brenda!";
