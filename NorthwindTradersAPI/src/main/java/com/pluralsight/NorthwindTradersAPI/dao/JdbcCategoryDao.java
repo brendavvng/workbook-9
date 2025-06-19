@@ -3,6 +3,7 @@ package com.pluralsight.NorthwindTradersAPI.dao;
 import com.pluralsight.NorthwindTradersAPI.models.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -120,6 +121,25 @@ public class JdbcCategoryDao implements CategoryDao {
             stmt.setString(1, category.getCategoryName());
             stmt.setInt(2, id);
 
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Override
+    public void delete(int id) {
+
+        String query = """
+                DELETE FROM categories
+                WHERE CategoryID = ?""";
+
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, id);
             stmt.executeUpdate();
 
         } catch (SQLException e) {
