@@ -47,7 +47,7 @@ public class ProductsController {
     }
 
     // delete mapping
-    @DeleteMapping("/api/products/{id}")
+    @DeleteMapping("/api/productscd /{id}")
     @ResponseStatus(value = HttpStatus.OK)
     public void deleteProductId(@PathVariable int id) {
         productDao.delete(id);
