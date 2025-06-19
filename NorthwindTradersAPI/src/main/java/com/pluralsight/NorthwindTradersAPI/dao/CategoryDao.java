@@ -7,7 +7,7 @@ public interface CategoryDao {
 
     List<Category> getAll();
     Category getById(int id);
-
     Category insert(Category category);
+    void update(int id, Category category);
 
 }

@@ -4,10 +4,10 @@ import java.util.List;
 
 public class Product {
 
-    int productId;
-    String productName;
-    int categoryId;
-    double unitPrice;
+    private int productId;
+    private String productName;
+    private int categoryId;
+    private double unitPrice;
 
     // empty constructor
     public Product() {}
@@ -53,15 +53,4 @@ public class Product {
         this.unitPrice = unitPrice;
     }
 
-    public static List<Product> getAll() {
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-
-    }
-
-    public void add(Product product) {
-
-    }
 }

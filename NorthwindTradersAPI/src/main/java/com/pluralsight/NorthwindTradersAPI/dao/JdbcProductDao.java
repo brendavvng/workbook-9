@@ -41,7 +41,7 @@ public class JdbcProductDao implements ProductDao {
                         resultSet.getInt("CategoryID"),
                         resultSet.getDouble("UnitPrice")
                 );
-                product.add(product);
+                products.add(product);
             }
 
         } catch (SQLException e) {
@@ -108,6 +108,28 @@ public class JdbcProductDao implements ProductDao {
         }
 
         return product;
+    }
+
+    @Override
+    public void update(int id, Product product){
+        String query = """
+            UPDATE products
+            SET ProductName = ?, CategoryID = ?, UnitPrice = ?
+            WHERE ProductID = ?""";
+
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, product.getProductName());
+            stmt.setInt(2, product.getCategoryId());
+            stmt.setDouble(3, product.getUnitPrice());
+            stmt.setInt(4, id);
+
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

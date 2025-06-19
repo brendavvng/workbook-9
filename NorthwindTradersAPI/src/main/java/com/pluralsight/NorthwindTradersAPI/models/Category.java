@@ -2,8 +2,8 @@ package com.pluralsight.NorthwindTradersAPI.models;
 
 public class Category {
 
-    int categoryId;
-    String categoryName;
+    private int categoryId;
+    private String categoryName;
 
     // empty constructor
     public Category() {}

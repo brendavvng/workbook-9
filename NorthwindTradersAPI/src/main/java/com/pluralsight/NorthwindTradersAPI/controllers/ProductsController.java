@@ -4,6 +4,7 @@ import com.pluralsight.NorthwindTradersAPI.dao.ProductDao;
 import com.pluralsight.NorthwindTradersAPI.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,7 +14,7 @@ public class ProductsController {
 
     // creating property
     @Autowired
-    @Qualifier("productDao")
+    @Qualifier("jdbcProductDao")
     private ProductDao productDao;
 
     // constructor
@@ -37,6 +38,12 @@ public class ProductsController {
     @PostMapping("/api/products")
     public Product addProduct(@RequestBody Product product) {
         return productDao.insert(product);
+    }
+
+    @PutMapping("/api/products/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public void updateProduct(@PathVariable int id, @RequestBody Product product) {
+        productDao.update(id, product);
     }
 
 }
